@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="AppFacturas.editFacturaPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppFacturas"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.BottomAppBar>
+        <CommandBar>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Icon="Save" Label="Guardar" Click="saveEditRecordatorio" />
+            </CommandBar.PrimaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+    <Grid 
+        Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+        DataContext="{Binding Source={StaticResource empresas}}"
+        Padding="20">
+        <StackPanel>
+            <TextBlock Text="Mis Facturas" Style="{StaticResource HeaderTextBlockStyle}" Margin="0,0,0,10"/>
+            <TextBlock Text="Editar Recordatorio" Style="{StaticResource SubtitleTextBlockStyle}" Margin="0,0,0,10"/>
+
+            <TextBlock Text="Empresa: " Style="{StaticResource SubheaderTextBlockStyle}"/>
+            <TextBlock x:Name="txtNombre" Style="{StaticResource SubtitleTextBlockStyle}" Width="310" Margin="0 0 0 10" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" HorizontalAlignment="Left"/>
+
+            <TextBlock Text="Dia de Corte: " Style="{StaticResource SubheaderTextBlockStyle}"/>
+            <TextBlock x:Name="txtVence" Style="{StaticResource SubtitleTextBlockStyle}" Width="310" Margin="0 0 0 10" HorizontalAlignment="Left" />
+
+            <TextBlock Text="Notificar: " Style="{StaticResource SubheaderTextBlockStyle}"/>
+            <ComboBox x:Name="txtDia" Width="310" PlaceholderText="Seleccione cuando notificar" Margin="0 0 0 10">
+                <x:String>1</x:String>
+                <x:String>2</x:String>
+                <x:String>3</x:String>
+            </ComboBox>
+
+            <TextBlock Text="Hora: " Style="{StaticResource SubheaderTextBlockStyle}"/>
+            <TimePicker x:Name="txtHora" Width="310" Margin="0 0 0 10"/>
+
+            <TextBlock Text="Valor: " Style="{StaticResource SubheaderTextBlockStyle}"/>
+            <TextBox x:Name="txtValor" Width="310" InputScope="Digits" PlaceholderText="Valor a Pagar" Margin="0 0 0 10" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </Grid>
+</Page>

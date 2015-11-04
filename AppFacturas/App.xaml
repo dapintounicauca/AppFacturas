@@ -1,0 +1,15 @@
+﻿<Application
+    x:Class="AppFacturas.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppFacturas"
+    xmlns:info="using:AppFacturas.Models"
+    RequestedTheme="Dark">
+    <Application.Resources>
+        <info:Factura x:Key="factura"/>
+        <info:Facturas x:Key="facturas"/>
+        <info:Empresa x:Key="empresa"/>
+        <info:Empresas x:Key="empresas"/>
+    </Application.Resources>
+
+</Application>
